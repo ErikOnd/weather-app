@@ -19,6 +19,15 @@ const SearchPage = () => {
         setLocatoin(event.target.value);
     };
 
+    const handleKeyPress = event => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            getLocation(location);
+        }
+    };
+
+
+
     const getLocation = async (location) => {
         try {
             const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=05833546db38c472f354ec08859e52c7`)
@@ -60,6 +69,7 @@ const SearchPage = () => {
                     aria-label="Search"
                     aria-describedby="basic-addon2"
                     className="search-input"
+                    onKeyDown={handleKeyPress}
                     value={location}
                     onChange={locationToState}
                 >
