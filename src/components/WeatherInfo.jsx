@@ -30,11 +30,11 @@ const WeatherInfo = ({ info, setInfo, weatherArr }) => {
             return 'https://cdn-icons-png.flaticon.com/512/9586/9586736.png'
         }
 
-        if (cloudiness < 90) {
-            return 'https://cdn-icons-png.flaticon.com/512/473/473697.png '
+        if (cloudiness <= 90) {
+            return 'https://cdn-icons-png.flaticon.com/512/1163/1163624.png'
         }
 
-        if (cloudiness > 90 && maxTemp <= 0) {
+        if (cloudiness >= 90 && maxTemp <= 0) {
             return 'https://cdn-icons-png.flaticon.com/512/7334/7334205.png '
         }
 
