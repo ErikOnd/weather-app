@@ -2,10 +2,34 @@ import { Form, FormControl, Row } from "react-bootstrap";
 import { Search } from "react-bootstrap-icons";
 import bgVideo from "../assets/video.mp4"
 import WeatherInfo from "./WeatherInfo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const SearchPage = () => {
+
+
+    const successCallback = (position) => {
+        console.log(position.coords.latitude)
+
+        getWeatherToday(position.coords.latitude, position.coords.longitude)
+
+    };
+
+    const errorCallback = (error) => {
+        console.log(error);
+    };
+
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    }, [])
+
+
+
+
+
+
+
 
     const [weatherInfos, setWeatherInfo] = useState([])
 

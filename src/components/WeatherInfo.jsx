@@ -47,3 +47,17 @@ const WeatherInfo = ({ info, setInfo, weatherArr }) => {
 }
 
 export default WeatherInfo
+
+
+
+
+/*
+
+
+todo: weather forecast
+todo: getting location automatically
+
+
+
+
+*/
