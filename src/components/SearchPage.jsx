@@ -75,7 +75,7 @@ const SearchPage = () => {
             <Row xs={1} sm={2} md={3} className="g-4">
                 {weatherInfos.map((weatherInfo) => {
                     return (
-                        <WeatherInfo info={weatherInfo}></WeatherInfo>
+                        <WeatherInfo info={weatherInfo} key={weatherInfo.name} setInfo={setWeatherInfo} weatherArr={weatherInfos}></WeatherInfo>
                     )
 
                 })}
